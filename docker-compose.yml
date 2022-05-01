@@ -1,0 +1,12 @@
+#A docker-compose. yml is a config file for docker-compose. it allows to deploy, combine and configure multiple docker-container at the same time.
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/repo
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      GRANT_SUDO: "yes"
